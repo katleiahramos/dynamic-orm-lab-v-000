@@ -55,7 +55,8 @@ def self.column_names
 
   def self.find_by(attribute)
     sql = "SELECT * FROM #{self.table_name} WHERE ? = ?"
-    attribute_key = attribute.keys[0].string 
+    attribute_key = attribute.keys[0].string
+    binding.pry
     attribute_value = attribute.values[0]
     DB[:conn].execute(sql, attribute_key, attribute_value )
   end
