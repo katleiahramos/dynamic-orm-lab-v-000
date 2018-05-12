@@ -58,7 +58,7 @@ def self.column_names
     attribute_key = attribute.keys[0].to_s
     attribute_value = attribute.values[0].to_s
 
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_key} = #{attribute_value}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_key}  = '#{attribute_value}'"
     binding.pry
     DB[:conn].execute(sql)
   end
